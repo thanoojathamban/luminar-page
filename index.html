@@ -1,376 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      .shimmer{
-        position: relative;
-        overflow: hidden;
-      }
-      .shimmer::after{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 30%;
-        height: 100%;
-        transform: skewx(-30deg);
-        background: linear-gradient(120deg, transparent, rgb(244, 235, 235));
-        animation: shine 2s infinite;
-      }
-      @keyframes shine{
-        100%{
-          left: 150%;
-        }
-      }
-     .imgshimmer{
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .shimmer {
       position: relative;
       overflow: hidden;
-     }
-     .imgshimmer:hover::after{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 30%;
-        height: 100%;
-        transform: skewX(-20deg);
-        background: linear-gradient(transparent, rgb(244, 235, 235));
-        animation: shine 2s;
+    }
+
+    .shimmer::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 30%;
+      height: 100%;
+      transform: skewx(-30deg);
+      background: linear-gradient(120deg, transparent, rgb(244, 235, 235));
+      animation: shine 2s infinite;
+      
+    }
+
+    @keyframes shine {
+      100% {
+        left: 150%;
       }
-      @keyframes shine{
-        100%{
-          left: 150%;
-        }
+    }
+
+    .imgshimmer {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 180px;
+      
+    }
+
+    .imgshimmer:hover::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      transform: skewX(-20deg);
+      background: linear-gradient(transparent, rgb(244, 235, 235));
+      animation: shine 2s;
+      opacity: 0.7;
+    }
+
+    @keyframes shine {
+      100% {
+        left: 150%;
       }
-    </style>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX"
-      crossorigin="anonymous"
-    />
+    }
+    .imgshimmer img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+    
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous" />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+    crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body style="background-color: rgb(240, 237, 237)">
-    <header class="container" style="display: flex; justify-content: space-between; margin-top: 80px;">
-        <div>
-<h6 style="color: purple;">10+ Unique Online & Offline Courses</h6>
-        <h2 style="font-weight: bolder;">Our <span style="color: purple;">Featured</span> Courses</h2>
+  <header class="container" style="display: flex; justify-content: space-between; margin-top: 80px;">
+    <div>
+      <h6 style="color: purple;">10+ Unique Online & Offline Courses</h6>
+      <h2 style="font-weight: bolder;">Our <span style="color: purple;">Featured</span> Courses</h2>
+    </div>
+
+    <div style="display: flex; align-items: center; margin-top: 30px; gap: 20px;">
+      <a style="text-decoration: none; color: rgb(63, 62, 62);" href="">All courses <span
+          class="badge text-bg-secondary">New</a>
+
+      <a style="text-decoration: none; color: rgb(63, 62, 62);" href="">New one</a>
+      <a style="text-decoration: none; color: rgb(63, 62, 62);" href="">Recommended</a>
+      <a style="text-decoration: none; color: rgb(63, 62, 62);" href="">Most placed</a>
+    </div>
+
+  </header><br><br>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/asp.net/0f0e2df677cb1a4563773b822871b02a.webp"
+                class="card-img-top" alt="image1">
+            </div>
+
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(27, 243, 27); bottom: 0; left: 0; padding: 4px; border-top-right-radius: 10px;">Most
+              placed</span>
+
+          </div>
+
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">Asp.net MVC with Angular -full <br> stack</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>5 Months</p>
+              </div>
+            </div>
+
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(86, 84, 84);">See
+              more...</a>
+          </div>
+
         </div>
-        
-        <div style="display: flex; align-items: center; margin-top: 30px; gap: 20px;">
-<a style="text-decoration: none; color: rgb(63, 62, 62);"href="">All courses <span class="badge text-bg-secondary">New</a>
-
-<a style="text-decoration: none; color: rgb(63, 62, 62);" href="">New one</a>
-<a style="text-decoration: none; color: rgb(63, 62, 62);" href="">Recommended</a>
-<a style="text-decoration: none; color: rgb(63, 62, 62);" href="">Most placed</a>
-        </div>
-
-    </header><br><br>
-
-    <div class="container">
-
-      <div class="row gx-4">
-        <div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 19.6rem;">
-<div style="position: relative;">
-  <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/asp.net/0f0e2df677cb1a4563773b822871b02a.webp" class="card-img-top" alt="image1">
-  </div>
-
-  <span class="shimmer" style="position: absolute; color: white; background-color: rgb(27, 243, 27); bottom: 0; left: 0; padding: 4px; border-top-right-radius: 10px;">Most placed</span>
-  
-</div>
-
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">Asp.net MVC with Angular -full <br> stack</p>
-    <div style="display: flex; gap: 20px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>5 Months</p>
-    </div>
-    </div>
-    
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    
-<p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(86, 84, 84);">See more...</a>
-  </div>
-
-</div>
-        </div>
-<div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 17.5rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/mearn/d6722020ae7bea7289baca35181bbbc2.webp" class="card-img-top" alt="image2">
-    </div>
-     
-     <span class="shimmer" style="position: absolute; color: white; background-color: rgb(247, 45, 247); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">Recommended</span>
-  </div>
- 
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">AI -Integrated MERN FULL Stack Development</p>
-    <div style="display: flex; gap: 20px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>6 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    <p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(93, 92, 92);">See more...</a>
-  </div>
-</div>
-</div>
-<div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 20.8rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/spring_M2WFgIG/4f5772fd1d1e12978188b96ae6bb1be1.webp" class="card-img-top" alt="imag">
-    </div>
-
-<span class="shimmer" style="position: absolute; color: white; background-color: rgb(27, 243, 27); bottom: 0; left: 0; padding: 4px; border-top-right-radius: 10px;">Most placed</span>
-  </div>
-  
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">Java Spring full Stack <br> Development</p>
-    <div style="display: flex; gap: 15px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>4 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    <p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See more...</a>
-  </div>
-</div>
-</div>
       </div>
-    
-    </div><br><br>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/mearn/d6722020ae7bea7289baca35181bbbc2.webp"
+                class="card-img-top" alt="image2">
+            </div>
 
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(247, 45, 247); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">Recommended</span>
+          </div>
 
-    <div class="container">
-
-      <div class="row gx-4">
-        <div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 19.9rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/django-course-thumbnail/b91209d73e184e9d04eb0f4fad63ed1e.webp" class="card-img-top" alt="image1">
-    </div>
-
-<span class="shimmer" style="position: absolute; color: white; background-color: rgb(27, 243, 27); bottom: 0; left: 0; padding: 4px; border-top-right-radius: 10px;">Most placed</span>
-  </div>
-  
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">AI Integrated Python Djongo <br> Full Stack Developer with <br> React js</p>
-    <div style="display: flex; gap: 15px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>6.5 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    
-<p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See more...</a>
-  </div>
-
-</div>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">AI -Integrated MERN FULL Stack Development</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>6 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(93, 92, 92);">See
+              more...</a>
+          </div>
         </div>
-<div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 19.6rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/ds_cjuFo7i/58eb25e54ad4d79e30d8430c35c9de56.webp" class="card-img-top" alt="image2">
-    </div>
-
- <span class="shimmer" style="position: absolute; color: white; background-color: rgb(247, 45, 247); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">Recommended</span>
-  </div>
-  
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">PYTHON Data Science-ML-<br>AI,Gen AI,AWS & powe BI</p>
-    <div style="display: flex; gap: 15px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>7 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    <p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See more...</a>
-  </div>
-</div>
-</div>
-<div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 19rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/1704974672404/1621fcc0252c90c6c81eb72102599dc6.webp" class="card-img-top" alt="imag5">
-    </div>
-
-     <span class="shimmer" style="position: absolute; color: white; background-color: rgb(247, 45, 247); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">Recommended</span>
-  </div>
-  
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">Software training testing-AI<br>powered -Manual and <br>Automation</p>
-    <div style="display: flex; gap: 15px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>5 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    <p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See more...</a>
-  </div>
-</div>
-</div>
       </div>
-    
-    </div><br><br>
-    
-<div class="container">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/spring_M2WFgIG/4f5772fd1d1e12978188b96ae6bb1be1.webp"
+                class="card-img-top" alt="imag">
+            </div>
 
-      <div class="row gx-4">
-        <div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 21rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/robotic/3ae96d56f53e7881f039bc2a5e34012f.webp" class="card-img-top" alt="image1">
-    </div>
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(27, 243, 27); bottom: 0; left: 0; padding: 4px; border-top-right-radius: 10px;">Most
+              placed</span>
+          </div>
 
-<span class="shimmer" style="position: absolute; color: white; background-color: rgb(17, 17, 249); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">New one</span>
-  </div>
-  
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">Robotics with AI & IoT training</p>
-    <div style="display: flex; gap: 15px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>5 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    
-<p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See more...</a>
-  </div>
-
-</div>
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">Java Spring full Stack <br> Development</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>4 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See
+              more...</a>
+          </div>
         </div>
-<div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 21rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/digital-marketing/1c56b28672ef600431c134d175bed387.webp" class="card-img-top" alt="image2">
-    </div>
-
-<span class="shimmer" style="position: absolute; color: white; background-color: rgb(17, 17, 249); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">New one</span>
-  </div>
-  
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">AI Integrated Digital marketing<br>specialist</p>
-    <div style="display: flex; gap: 15px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>4 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    <p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See more...</a>
-  </div>
-</div>
-</div>
-<div class="col-12 col-sm-6 col-md-4">
-<div class="card" style="width: 19rem;">
-  <div style="position: relative;">
-    <div class="imgshimmer">
-<img style="height: 10rem;" src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/data_analysis_Khz1Nw4/550eabbdf6d948d0758ab8f6658c18c2.webp" class="card-img-top" alt="image6">
-    </div>
-
-<span class="shimmer" style="position: absolute; color: white; background-color: rgb(17, 17, 249); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">New one</span>
-  </div>
-  
-  <div class="card-body">
-    <p class="card-text" style="font-weight: bold;">AI Integrated Data Analytics<br>program(python+power BI+<br>AI tools) </p>
-    <div style="display: flex; gap: 15px;">
-<div style="display: flex; list-style: none;">
-<li><i class="fa-regular fa-file"></i></li> 
-<p>Modules</p>
-    </div>
-    <div style="display: flex; list-style: none;">
-      <li><i class="fa-regular fa-clock"></i></li>
-      <p>5.5 Months</p>
-    </div>
-    </div>
-    ⭐⭐⭐⭐⭐(4.78) <br><br>
-    <p>🏆 100% Placement assistance 🏆</p>
-<a href="" style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See more...</a>
-  </div>
-</div>
-</div>
       </div>
-    
-    </div><br><br>
+    </div>
+
+  </div><br><br>
+
+
+  <div class="container">
+
+    <div class="row gx-4">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/django-course-thumbnail/b91209d73e184e9d04eb0f4fad63ed1e.webp"
+                class="card-img-top" alt="image8">
+            </div>
+
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(27, 243, 27); bottom: 0; left: 0; padding: 4px; border-top-right-radius: 10px;">Most
+              placed</span>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">AI Integrated Python Djongo <br> Full Stack Developer with
+              <br> React js</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>6.5 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See
+              more...</a>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/ds_cjuFo7i/58eb25e54ad4d79e30d8430c35c9de56.webp"
+                class="card-img-top" alt="image2">
+            </div>
+
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(247, 45, 247); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">Recommended</span>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">PYTHON Data Science-ML-<br>AI,Gen AI,AWS & powe BI</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>7 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See
+              more...</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/1704974672404/1621fcc0252c90c6c81eb72102599dc6.webp"
+                class="card-img-top" alt="imag5">
+            </div>
+
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(247, 45, 247); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">Recommended</span>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">Software training testing-AI<br>powered -Manual and
+              <br>Automation</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>5 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See
+              more...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><br><br>
+
+  <div class="container">
+
+    <div class="row gx-4">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/robotic/3ae96d56f53e7881f039bc2a5e34012f.webp"
+                class="card-img-top" alt="image6">
+            </div>
+
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(17, 17, 249); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">New
+              one</span>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">Robotics with AI & IoT training</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>5 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See
+              more...</a>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/digital-marketing/1c56b28672ef600431c134d175bed387.webp"
+                class="card-img-top" alt="image9">
+            </div>
+
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(17, 17, 249); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">New
+              one</span>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">AI Integrated Digital marketing<br>specialist</p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>4 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See
+              more...</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card h-100">
+          <div style="position: relative;">
+            <div class="imgshimmer">
+              <img
+                src="https://d3eqn3hw2x95rk.cloudfront.net/CACHE/images/course_image/data_analysis_Khz1Nw4/550eabbdf6d948d0758ab8f6658c18c2.webp"
+                class="card-img-top" alt="image6">
+            </div>
+
+            <span class="shimmer"
+              style="position: absolute; color: white; background-color: rgb(17, 17, 249); bottom: 0; left: 0; border-top-right-radius: 10px; padding: 4px;">New
+              one</span>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">AI Integrated Data Analytics<br>program(python+power
+              BI+<br>AI tools) </p>
+            <div style="display: flex;">
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-file"></i></li>
+                <p>Modules</p>
+              </div>
+              <div style="display: flex; list-style: none;">
+                <li><i class="fa-regular fa-clock"></i></li>
+                <p>5.5 Months</p>
+              </div>
+            </div>
+            ⭐⭐⭐⭐⭐(4.78) <br><br>
+            <p>🏆 100% Placement assistance 🏆</p>
+            <a href=""
+              style="align-items: center; font-weight: bold; text-decoration: none; margin-left: 70px; color: rgb(94, 92, 92);">See
+              more...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><br><br>
 
 </body>
 <script>
   AOS.init();
 </script>
+
 </html>
